@@ -4,6 +4,7 @@ RSpec.describe ParkService do
     context "#connection" do
       it "returns a json object" do
         parks = ParkService.new.get_state_parks("TN")
+        require 'pry'; binding.pry
         expect(parks).to be_a(Hash)
         expect(parks.keys).to eq([:total, :limit, :start, :data])
 
